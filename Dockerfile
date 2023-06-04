@@ -10,7 +10,8 @@ FROM nginx
 RUN rm /etc/nginx/conf.d/*
 
 # Copiar tu archivo de configuración del proxy reverso a la ubicación en el contenedor
-COPY nginx.conf /etc/nginx/conf.d/default.conf
+# COPY nginx.conf /etc/nginx/conf.d/default.conf
+COPY nginx.conf /etc/nginx/nginx.conf
 
 # Exponer el puerto 80 para el tráfico entrante
 EXPOSE 80
