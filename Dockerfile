@@ -16,5 +16,15 @@ COPY nginx.conf /etc/nginx/nginx.conf
 # Exponer el puerto 80 para el tráfico entrante
 EXPOSE 80
 
+# Eliminar cualquier archivo o enlace simbólico existente en el directorio /var/log/nginx
+RUN rm -f /var/log/nginx/access.log && \
+    rm -f /var/log/nginx/error.log && \
+    rm -f /var/log/nginx/access.log.1 && \
+    rm -f /var/log/nginx/error.log.1
+
+# Configuramos nginx para que genere un log de acceso
+RUN ln -sf /dev/stdout /var/log/nginx/access.log && \
+    ln -sf /dev/stderr /var/log/nginx/error.log
+
 # Comando para iniciar Nginx cuando se inicie el contenedor
 CMD ["nginx", "-g", "daemon off;"]
