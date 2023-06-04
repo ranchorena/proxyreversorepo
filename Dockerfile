@@ -5,7 +5,9 @@ FROM nginx
 # COPY nginx.conf /etc/nginx/nginx.conf
 
 # Eliminar el archivo de configuración predeterminado
-RUN rm /etc/nginx/conf.d/default.conf
+# RUN rm /etc/nginx/conf.d/default.conf
+# Eliminar todos los archivos de configuración existentes
+RUN rm /etc/nginx/conf.d/*
 
 # Copiar tu archivo de configuración del proxy reverso a la ubicación en el contenedor
 COPY nginx.conf /etc/nginx/conf.d/default.conf
