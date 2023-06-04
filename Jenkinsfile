@@ -37,7 +37,7 @@ pipeline {
             }
         } 
     } 
-    post {
+    /*post {
         success {
             emailext body: "La subida de FiberGIS_CatalogoWeb se ha completado con exito.\n\n" +
                            "Ultimo mensaje de commit: ${env.LAST_COMMIT_MESSAGE}\n\n" +
@@ -58,6 +58,6 @@ pipeline {
                      subject: 'FiberGIS_CatalogoWeb - La subida ha Fallado - ERROR',
                      to: 'Raul.Anchorena@geosystems.com.ar;Agustin.David@geosystems.com.ar'
         }
-    }
+    }*/
 }
 
