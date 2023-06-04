@@ -30,7 +30,7 @@ pipeline {
                 sshagent(['SSH_Server_135_geouser']) {
                     sh '''
                         ssh geouser@192.168.1.135 "
-                            docker run -d --restart=always -p 82:80 --name proxy-reverso-nginx proxy-reverso-nginx:qa
+                            docker run -d --restart=always -p 80:80 --name proxy-reverso-nginx proxy-reverso-nginx:qa
                         "
                     '''
                 }
