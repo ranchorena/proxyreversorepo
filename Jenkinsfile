@@ -40,8 +40,6 @@ pipeline {
     post {
         success {
             emailext body: "La subida de proxy-reverso-nginx se ha completado con exito.\n\n" +
-                           "Ultimo mensaje de commit: ${env.LAST_COMMIT_MESSAGE}\n\n" +
-                           "Commit Id: ${env.LAST_COMMIT_HASH}.\n\n" +
                            "proxy-reverso-nginx\n" +
                            "http://192.168.1.135:80\n\n" +
                            "Job Name: ${env.JOB_NAME}\n" +
